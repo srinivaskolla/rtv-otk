@@ -1,23 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <title>OpenTok Hello World</title>
+    <meta charset="UTF-8">
+    <title>OT Accelerator Core</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://assets.tokbox.com/solutions/css/style.css">
     <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
-    <script type="text/javascript">
-        var apiKey = '46926064';
-        var sessionId = '2_MX40NjkyNjA2NH5-MTYwMDgwNDE5NjI4N35wQ1ZGdWptd1lkMU5RYVBUZzdjNmZXSmh-UH4';
-        var token = 'T1==cGFydG5lcl9pZD00NjkyNjA2NCZzaWc9ZWI3NTk0Y2E1ODRmZWYxODk5MzEzMWYxNzJmOGZjOGE1NzRhNDEzNTpzZXNzaW9uX2lkPTJfTVg0ME5qa3lOakEyTkg1LU1UWXdNRGd3TkRFNU5qSTROMzV3UTFaR2RXcHRkMWxrTVU1UllWQlVaemRqTm1aWFNtaC1VSDQmY3JlYXRlX3RpbWU9MTYwMTAzOTI4MSZub25jZT0wLjQ5MjM3OTUwNTIwMzEzNyZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNjAzNjMxMjgxJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9';
-    </script>
-    <script src="js/helloworld.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.2/livestamp.min.js"></script>
+    <script src="js/components/opentok-solutions-logging.js"></script>
+    <script src="js/components/opentok-text-chat.js"></script>
+    <script src="js/components/opentok-screen-sharing.js"></script>
+    <script src="js/components/opentok-annotation.js"></script>
+    <script src="js/components/opentok-archiving.js"></script>
+    <script src="js/components/opentok-acc-core.js"></script>
+    <script src="js/app.js"></script>
 </head>
+
 <body>
-    <h2>Hello, World!</h2>
-    <br/><span id="pubconnectionid"></span><br/>
-    <br/>
-    <h1>Publisher</h1>
-    <div id="publisher"></div>  
-    <h1>Subscribers</h1>
-    <div id="subscribers"></div>
+    <div class="App">
+        <div class="App-header">
+            <img src="./images/logo.svg" class="App-logo" alt="logo" />
+            <h1>OpenTok Accelerator Core</h1>
+        </div>
+        <div class="App-main">
+            <div id="controls" class='App-control-container hidden'>
+                <div class="ots-video-control circle audio" id="toggleLocalAudio"></div>
+                <div class="ots-video-control circle video" id="toggleLocalVideo"></div>
+            </div>
+            <div class="App-video-container" id="appVideoContainer">
+                <div class="App-mask" id="connecting-mask">
+                    <progress-spinner dark style="font-size:50px"></progress-spinner>
+                    <div class="message with-spinner">Connecting</div>
+                </div>
+                <div class="App-mask hidden" id="start-mask">
+                    <div class="message button clickable" id="start">Click to Start Call</div>
+                </div>
+                <div id="cameraPublisherContainer" class="video-container hidden"></div>
+                <div id="screenPublisherContainer" class="video-container hidden"></div>
+                <div id="cameraSubscriberContainer" class="video-container-hidden"></div>
+                <div id="screenSubscriberContainer" class="video-container-hidden"></div>
+            </div>
+            <div id="chat" class="App-chat-container"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>
