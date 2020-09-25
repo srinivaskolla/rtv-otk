@@ -2,6 +2,13 @@
 
 let otCore;
 const options = {
+  
+  credentials: {
+  apiKey: "46926064",
+  sessionId: "2_MX40NjkyNjA2NH5-MTYwMDgwNDE5NjI4N35wQ1ZGdWptd1lkMU5RYVBUZzdjNmZXSmh-UH4",
+  token: "T1==cGFydG5lcl9pZD00NjkyNjA2NCZzaWc9ZWI3NTk0Y2E1ODRmZWYxODk5MzEzMWYxNzJmOGZjOGE1NzRhNDEzNTpzZXNzaW9uX2lkPTJfTVg0ME5qa3lOakEyTkg1LU1UWXdNRGd3TkRFNU5qSTROMzV3UTFaR2RXcHRkMWxrTVU1UllWQlVaemRqTm1aWFNtaC1VSDQmY3JlYXRlX3RpbWU9MTYwMTAzOTI4MSZub25jZT0wLjQ5MjM3OTUwNTIwMzEzNyZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNjAzNjMxMjgxJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
+  },
+  
   // A container can either be a query selector or an HTMLElement
   // eslint-disable-next-line no-unused-vars
   streamContainers: function streamContainers(pubSub, type, data) {
