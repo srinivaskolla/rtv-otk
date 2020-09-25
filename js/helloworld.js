@@ -23,7 +23,7 @@ session.connect(token, function(error) {
   } else {
     // Publish a stream, using the Publisher we initialzed earlier.
     // This triggers a streamCreated event on other clients.
-    document.getElementById("pubconnectionid").text =  session.connection.id;
+    document.getElementById("pubconnectionid").textContent =  session.connection.id;
     session.publish(publisher, function(error) {
       if (error) {
         console.error('Failed to publish', error);
